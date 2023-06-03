@@ -57,15 +57,11 @@ function NavBar() {
                 className="absolute w-full h-full top-0 left-0"
                 style={{ display: isOpen ? "none" : "block" }}
               ></div>
-              <Link href={"#"} aria-disabled={!isOpen}>
-                About me
-              </Link>
-              <Link href={"/projects"} aria-disabled={!isOpen}>
-                Projects
-              </Link>
-              <Link href={"#"} aria-disabled={!isOpen}>
-                Contact
-              </Link>
+
+              <Link href={"/"}>Home</Link>
+              <Link href={"#"}>About me</Link>
+              <Link href={"/projects"}>Projects</Link>
+              <Link href={"#"}>Contact</Link>
             </div>
           </div>
         </div>
