@@ -18,10 +18,20 @@ function NavBar() {
 
       <div
         aria-hidden
-        className="w-screen h-screen absolute bg-black/40 top-0 left-0 transition-colors md:hidden"
+        className="w-screen h-screen absolute bg-black top-0 left-0 transition-opacity duration-300 md:hidden flex flex-col-reverse text-center py-11"
         onClick={() => setIsOpen(false)}
-        style={{ opacity: isOpen ? 1 : 0, zIndex: isOpen ? 0 : -20 }}
-      ></div>
+        style={{ opacity: isOpen ? 0.6 : 0, zIndex: isOpen ? 0 : -20 }}
+      >
+        <span
+          className="text-light/70 transition-all duration-500"
+          style={{
+            opacity: isOpen ? 1 : 0,
+            transform: `translateY(${isOpen ? 0 : 50}px)`,
+          }}
+        >
+          click anywhere to exit
+        </span>
+      </div>
 
       <div className="space-x-4 hidden md:block">
         <Link href={"#"}>About me</Link>
@@ -37,7 +47,7 @@ function NavBar() {
           className="relative grid place-content-center h-9 aspect-square md:hidden"
         >
           <div
-            className="absolute transition-all duration-500 top-0 right-0 w-full h-full rounded border-2 flex flex-col justify-center border-dark/50 dark:border-light/50 bg-light dark:bg-dark"
+            className="absolute transition-all duration-500 top-0 right-0 w-full h-full rounded-md border-2 flex flex-col justify-center border-dark/50 dark:border-light/50 bg-light dark:bg-dark"
             style={
               isOpen
                 ? { width: "93vw", height: "50vh", padding: "20px" }
