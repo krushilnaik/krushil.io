@@ -27,7 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
           <footer className="">
             <div className="text-center max-w-7xl mx-auto px-4 py-5 text-sm dark:opacity-40">
-              &copy; 2023 | Made with ☕ by Krushil Naik
+              &copy; 2023 | Made with 🌮 by Krushil Naik
             </div>
           </footer>
         </div>
