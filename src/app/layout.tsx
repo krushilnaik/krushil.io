@@ -18,9 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <NavBar />
           </header>
 
-          <main className="flex-grow">
+          <div className="flex-grow">
             <div className="max-w-7xl mx-auto px-4 py-5">{children}</div>
-          </main>
+          </div>
 
           <footer className="">
             <div className="text-center max-w-7xl mx-auto px-4 py-5 text-sm">
