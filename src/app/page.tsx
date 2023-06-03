@@ -1,3 +1,7 @@
 export default function Home() {
-  return <main></main>;
+  return (
+    <div className="grid place-content-center">
+      <span className="text-4xl">hi</span>
+    </div>
+  );
 }

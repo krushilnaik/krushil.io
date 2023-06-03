@@ -21,9 +21,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <NavBar />
           </header>
 
-          <div className="flex-grow">
-            <div className="max-w-7xl mx-auto px-4 py-5">{children}</div>
-          </div>
+          <main className="flex-grow flex [&>*]:flex-1">{children}</main>
 
           <footer className="">
             <div className="text-center max-w-7xl mx-auto px-4 py-5 text-sm dark:opacity-40">
