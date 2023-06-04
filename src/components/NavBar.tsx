@@ -18,7 +18,7 @@ function NavBar() {
 
       <div
         aria-hidden
-        className="w-screen h-screen absolute bg-dark dark:bg-light/5 top-0 left-0 transition-opacity duration-300 md:hidden flex flex-col-reverse text-center py-11"
+        className="w-full h-full absolute bg-dark dark:bg-light/5 top-0 left-0 transition-opacity duration-300 md:hidden flex flex-col-reverse text-center overflow-hidden"
         onClick={() => setIsOpen(false)}
         style={{ opacity: isOpen ? 0.6 : 0, zIndex: isOpen ? 0 : -20 }}
       >
@@ -44,7 +44,7 @@ function NavBar() {
 
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="relative grid place-content-center h-9 aspect-square md:hidden"
+          className="relative grid place-content-center h-9 aspect-square md:hidden cursor-pointer"
         >
           <div
             className="absolute transition-all duration-300 top-0 right-0 w-full h-full rounded-md border-2 flex flex-col justify-center border-dark/50 dark:border-light/50 bg-light dark:bg-dark"
