@@ -4,7 +4,8 @@ import { useBackgroundColor } from "@/app/hooks";
 import { GET_SINGLE_PROJECT } from "@/graphql";
 import { Project } from "@/types";
 import { useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import { Fragment, useEffect } from "react";
+import Image from "next/image";
+import { useEffect } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 interface Props {
@@ -14,13 +15,10 @@ interface Props {
 }
 
 function ProjectPage({ params }: Props) {
-  const { slug } = params;
   const { setBackgroundColor } = useBackgroundColor();
   const { data, loading } = useQuery<{ project: Project }>(GET_SINGLE_PROJECT, {
     variables: params,
   });
-
-  // const { project } = data!;
 
   useEffect(() => {
     setBackgroundColor(data?.project.backgroundColor);
@@ -28,8 +26,6 @@ function ProjectPage({ params }: Props) {
 
   if (loading) {
     return null;
-  } else {
-    console.log(data);
   }
 
   return (
@@ -46,17 +42,25 @@ function ProjectPage({ params }: Props) {
       </div>
       <div className="flex flex-col gap-4 items-center w-full">
         <h2 className="text-3xl font-semibold">{data?.project.title}</h2>
-        <ul className="flex flex-wrap items-center gap-x-2 md:px-4">
+        <ul className="flex flex-wrap items-center gap-2 md:px-4 justify-center">
           {data?.project.techStack.map((tech, i) => (
-            <Fragment key={tech.id}>
-              {i !== 0 && (
-                <span
-                  className="inline-block w-1 aspect-square bg-slate-100/40 rounded-full"
-                  aria-hidden
-                ></span>
+            <li
+              key={tech.id}
+              className="flex items-center gap-2 bg-slate-500/40 p-3 py-1 rounded-full"
+            >
+              {tech.icon ? (
+                <Image
+                  width={tech.icon.width}
+                  height={tech.icon.height}
+                  src={tech.icon.url}
+                  className="h-4 w-4"
+                  alt={tech.title}
+                />
+              ) : (
+                <div className="w-4 h-4" aria-hidden></div>
               )}
-              <li style={{ color: tech.borderColor.hex }}>{tech.title}</li>
-            </Fragment>
+              <span>{tech.title}</span>
+            </li>
           ))}
         </ul>
         <div className="prose transition-colors duration-500 dark:prose-invert lg:prose-lg prose-strong:text-sky-800 dark:prose-strong:text-rose-300 p-5">

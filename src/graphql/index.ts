@@ -31,6 +31,7 @@ export const typedefs = gql`
     id: String!
     title: String!
     borderColor: Color!
+    icon: Asset
   }
 `;
 
@@ -77,6 +78,11 @@ export const GET_SINGLE_PROJECT = gql`
         ... on Tech {
           id
           title
+          icon {
+            url
+            width
+            height
+          }
           borderColor {
             hex
           }
