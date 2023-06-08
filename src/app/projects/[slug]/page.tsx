@@ -21,15 +21,15 @@ function ProjectPage({ params }: Props) {
   });
 
   useEffect(() => {
-    setBackgroundColor(data?.project.backgroundColor);
-  }, [data]);
+    setBackgroundColor(data?.project.backgroundColor.hex!);
+  }, [data, setBackgroundColor]);
 
   if (loading) {
     return null;
   }
 
   return (
-    <main className="flex flex-col lg:grid grid-cols-[1fr_1fr] items-center justify-between my-14 md:mt-0">
+    <main className="flex flex-col lg:grid grid-cols-[1fr_1fr] items-center justify-between my-14 md:mt-0 gap-4">
       <div className="md:hidden relative w-96 max-w-[45vw] aspect-[9/19.5] bg-slate-800 rounded-md border-[5px] border-slate-600 text-center">
         &quot;{data?.project.title}&quot; Mobile Demo
       </div>
