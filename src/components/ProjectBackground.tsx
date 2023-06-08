@@ -11,7 +11,7 @@ function ProjectBackground() {
   return (
     <BackgroundContext.Consumer>
       {({ backgroundColor }) => (
-        <div className="absolute w-full h-screen overflow-hidden -z-10">
+        <div className="absolute w-full h-screen top-0 left-0 overflow-hidden -z-10">
           {/* Desktop Background */}
           <div
             className="fixed hidden md:block transition-all duration-500 top-0 left-0 h-screen bg-red-400"

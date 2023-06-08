@@ -44,7 +44,11 @@ export const GET_ALL_PROJECT_SUMMARIES = gql`
       techStack {
         ... on Tech {
           id
-          title
+          icon {
+            url
+            width
+            height
+          }
         }
       }
       desktopScreenshot {
