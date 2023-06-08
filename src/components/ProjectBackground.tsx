@@ -23,7 +23,7 @@ function ProjectBackground() {
           ></div>
           {/* Mobile background */}
           <div
-            className="absolute transition-all md:hidden duration-500 bg-red-400 rounded-full -translate-x-1/2 -translate-y-1/2 left-1/2"
+            className="absolute transition-all md:hidden duration-500 bg-red-400 rounded-full -translate-x-1/2 -translate-y-1/2 left-1/2 -top-10"
             style={{
               backgroundColor,
               width: isProject ? "155vw" : "0vw",
