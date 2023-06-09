@@ -31,7 +31,7 @@ function ProjectPage() {
           <div className="flex justify-between">
             <ul className="flex gap-1">
               {_p.techStack.map(({ icon, ..._t }) => (
-                <li>
+                <li key={_p.title + _t.title}>
                   {
                     <Image
                       src={icon?.url || ""}
