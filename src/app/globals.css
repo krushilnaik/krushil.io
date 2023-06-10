@@ -11,3 +11,15 @@
 body {
   @apply bg-light dark:bg-dark transition-colors duration-500;
 }
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

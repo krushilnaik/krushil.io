@@ -23,6 +23,7 @@ export const typedefs = gql`
     desktopScreenshot: Asset
     liveSite: String
     githubRepo: String!
+    isWIP: Boolean!
     description: RichText
     backgroundColor: Color!
   }
@@ -41,6 +42,7 @@ export const GET_ALL_PROJECT_SUMMARIES = gql`
       id
       slug
       title
+      isWIP
       techStack {
         ... on Tech {
           id
