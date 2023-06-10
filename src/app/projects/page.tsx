@@ -39,7 +39,7 @@ function ProjectPage() {
           <div className="flex justify-between bg-rose-900 p-3 rounded-b-lg">
             <ul className="flex gap-1">
               {_p.techStack.map(({ icon, ..._t }) => (
-                <li>
+                <li key={_p.title + _t.title}>
                   <Image
                     src={icon?.url || ""}
                     height={icon?.height || 400}
