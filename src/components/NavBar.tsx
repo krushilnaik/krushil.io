@@ -18,9 +18,9 @@ function NavBar() {
 
       <div
         aria-hidden
-        className="w-full h-full absolute bg-dark dark:bg-light/5 top-0 left-0 transition-opacity duration-300 md:hidden flex flex-col-reverse text-center p-11 overflow-hidden"
+        className="w-full h-full absolute bg-dark dark:bg-dark top-0 left-0 transition-opacity duration-300 md:hidden flex flex-col-reverse text-center p-11 overflow-hidden z-40"
         onClick={() => setIsOpen(false)}
-        style={{ opacity: isOpen ? 0.6 : 0, zIndex: isOpen ? 0 : -20 }}
+        style={{ opacity: isOpen ? 0.85 : 0, zIndex: isOpen ? 0 : -20 }}
       >
         <span
           className="text-light/70 transition-all duration-500"

@@ -2,7 +2,6 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import { getCurrentScheme } from "@/utils";
-import ProjectBackground from "@/components/ProjectBackground";
 import { ApolloWrapper } from "./ApolloWrapper";
 
 const fontFamily = Poppins({ weight: ["300", "400", "500", "700"], subsets: ["latin"] });

@@ -17,8 +17,8 @@ function ProjectBackground() {
             className="fixed hidden md:block transition-all duration-500 top-0 left-0 h-screen bg-red-400"
             style={{
               backgroundColor,
-              clipPath: "polygon(0 0, 80% 0%, 55% 100%, 0% 100%)",
-              width: isProject ? "70vw" : "0vw",
+              clipPath: "polygon(0 0, 85% 0%, 60% 100%, 0% 100%)",
+              width: isProject ? "65vw" : "0vw",
             }}
           ></div>
           {/* Mobile background */}

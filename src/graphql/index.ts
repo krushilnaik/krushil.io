@@ -63,6 +63,7 @@ export const GET_ALL_PROJECT_SUMMARIES = gql`
 export const GET_SINGLE_PROJECT = gql`
   query MyQuery($slug: String!) {
     project(where: { slug: $slug }) {
+      id
       title
       isWIP
       githubRepo
