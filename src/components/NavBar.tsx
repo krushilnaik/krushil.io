@@ -35,7 +35,7 @@ function NavBar() {
 
       <div className="space-x-4 hidden md:block">
         <Link href={"#"}>About me</Link>
-        <Link href={"#"}>Projects</Link>
+        <Link href={"/projects"}>Projects</Link>
         <Link href={"#"}>Contact</Link>
       </div>
 

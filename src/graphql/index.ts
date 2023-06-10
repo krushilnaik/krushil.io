@@ -35,6 +35,14 @@ export const typedefs = gql`
   }
 `;
 
+export const GET_ALL_PROJECT_SLUGS = gql`
+  query {
+    projects {
+      slug
+    }
+  }
+`;
+
 export const GET_ALL_PROJECT_SUMMARIES = gql`
   query {
     projects {

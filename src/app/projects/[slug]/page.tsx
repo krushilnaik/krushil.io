@@ -1,7 +1,7 @@
 "use client";
 
 import { useBackgroundColor } from "@/app/hooks";
-import { GET_SINGLE_PROJECT } from "@/graphql";
+import { GET_ALL_PROJECT_SLUGS, GET_SINGLE_PROJECT } from "@/graphql";
 import { Project } from "@/types";
 import { useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
@@ -13,6 +13,26 @@ interface Props {
   params: {
     slug: string;
   };
+}
+
+export async function generateStaticParams() {
+  // const { data, loading } = useQuery<{ projects: Project[] }>(GET_ALL_PROJECT_SUMMARIES);
+  // const { data } = await makeClient().query({
+  //   query: GET_ALL_PROJECT_SLUGS,
+  // });
+
+  // console.log(data);
+
+  // return data?.projects.map((_p: Project) => ({
+  //   slug: _p.slug,
+  // }));
+
+  return [
+    { slug: "this-site" },
+    { slug: "ascii-generator" },
+    { slug: "fifty-states" },
+    { slug: "horiseon" },
+  ];
 }
 
 function ProjectPage({ params }: Props) {
