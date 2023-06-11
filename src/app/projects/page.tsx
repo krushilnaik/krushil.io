@@ -22,7 +22,7 @@ function ProjectPage() {
       {data?.projects.map((_p, i) => (
         <button
           key={i}
-          className="px-4 py-2 bg-rose-800 transition-all duration-300 hover:scale-110 rounded-lg w-96 flex flex-col gap-3"
+          className="px-4 py-2 bg-rose-800 transition-all duration-300 hover:scale-110 rounded-lg w-80 md:w-96 flex flex-col gap-3"
           onClick={() => {
             setProjectImage(_p.desktopScreenshot?.url || "");
             router.push(`/projects/${_p.slug}`);
