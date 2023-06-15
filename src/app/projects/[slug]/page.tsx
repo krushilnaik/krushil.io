@@ -6,7 +6,7 @@ import { runQuery } from "@/utils";
 import { Suspense } from "react";
 import { motion } from "framer-motion";
 import { useProjectImage } from "@/hooks";
-import { ProjectSummary } from "@/components";
+import { Loader, ProjectSummary } from "@/components";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
@@ -40,7 +40,7 @@ function ProjectPage({ params }: Props) {
         <div className="h-4 w-1/3 rounded-full bg-slate-600"></div>
       </div>
 
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <ProjectSummary data={data} />
       </Suspense>
 
