@@ -7,6 +7,9 @@ import { Suspense } from "react";
 import { motion } from "framer-motion";
 import { useProjectImage } from "@/hooks";
 import { ProjectSummary } from "@/components";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   params: {
@@ -22,17 +25,8 @@ function ProjectPage({ params }: Props) {
 
   return (
     <main className="flex flex-col lg:grid grid-cols-[1fr_1fr] items-center justify-between md:mt-0 gap-4">
-      <div className="md:hidden relative h-96 aspect-[9/19.5] bg-slate-800 rounded-md border-[5px] border-slate-600 center text-center">
-        <motion.img
-          src={projectImage}
-          width={1920}
-          height={1080}
-          alt="project screenshot"
-          className="w-full h-full"
-        />
-      </div>
-      <div aria-label="project demo" className="hidden md:flex flex-col items-center">
-        <div className="h-80 aspect-[16/9] bg-slate-800 rounded-md border-4 border-slate-600">
+      <div aria-label="project demo" className="flex flex-col items-center">
+        <div className="aspect-[16/9] bg-slate-800 rounded-md border-4 border-slate-600 w-[683px] max-w-[85vw]">
           <motion.img
             layoutId={slug}
             src={projectImage}
@@ -49,6 +43,11 @@ function ProjectPage({ params }: Props) {
       <Suspense fallback={<div>loading...</div>}>
         <ProjectSummary data={data} />
       </Suspense>
+
+      <Link className="flex gap-2 items-center md:hidden" href={"/projects"}>
+        <FontAwesomeIcon icon={faChevronLeft} />
+        <span>Back to Projects</span>
+      </Link>
     </main>
   );
 }
