@@ -22,20 +22,28 @@ function ProjectPage() {
       {data?.projects.map((_p, i) => (
         <button
           key={i}
-          className="px-4 py-2 bg-rose-800 transition-all duration-300 hover:scale-110 rounded-lg w-80 md:w-96 flex flex-col gap-3"
+          className="p-2 bg-rose-800 transition-all duration-300 hover:scale-110 rounded-lg w-80 md:w-96 flex flex-col gap-3"
           onClick={() => {
             setProjectImage(_p.desktopScreenshot?.url || "");
             router.push(`/projects/${_p.slug}`);
           }}
         >
-          <motion.img
-            className="w-full aspect-[16/9]"
+          <motion.div
             layoutId={_p.slug}
-            src={_p.desktopScreenshot?.url || ""}
-            width={_p.desktopScreenshot?.width || 1920}
-            height={_p.desktopScreenshot?.height || 1080}
-            alt={_p.title}
-          />
+            className="w-full aspect-video grid place-content-center bg-rose-600 rounded-lg text-xl"
+          >
+            {_p.desktopScreenshot?.url ? (
+              <Image
+                className="w-full aspect-video rounded-lg"
+                src={_p.desktopScreenshot?.url || ""}
+                width={_p.desktopScreenshot?.width || 1920}
+                height={_p.desktopScreenshot?.height || 1080}
+                alt={_p.title}
+              />
+            ) : (
+              _p.title
+            )}
+          </motion.div>
           <div className="flex justify-between w-full">
             <ul className="flex gap-1">
               {_p.techStack.map(({ icon, ..._t }) => (

@@ -10,6 +10,7 @@ import { Loader, ProjectSummary } from "@/components";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 interface Props {
   params: {
@@ -26,16 +27,22 @@ function ProjectPage({ params }: Props) {
   return (
     <main className="flex flex-col lg:grid grid-cols-[1fr_1fr] items-center justify-between md:mt-0 gap-4">
       <div aria-label="project demo" className="flex flex-col items-center">
-        <div className="aspect-[16/9] bg-slate-800 rounded-md border-4 border-slate-600 w-[683px] max-w-[85vw]">
-          <motion.img
-            layoutId={slug}
-            src={projectImage}
-            width={1920}
-            height={1080}
-            alt="project screenshot"
-            className="w-full h-full"
-          />
-        </div>
+        <motion.div
+          layoutId={slug}
+          className="aspect-video grid place-content-center bg-rose-600 text-xl rounded-md border-4 border-slate-600 w-[683px] max-w-[85vw]"
+        >
+          {projectImage ? (
+            <Image
+              className="w-full aspect-video"
+              src={projectImage}
+              width={1920}
+              height={1080}
+              alt={"project screenshot"}
+            />
+          ) : (
+            "Screenshot not found"
+          )}
+        </motion.div>
         <div className="w-1/4 h-14 bg-slate-700"></div>
         <div className="h-4 w-1/3 rounded-full bg-slate-600"></div>
       </div>
