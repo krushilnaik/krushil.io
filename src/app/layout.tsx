@@ -19,11 +19,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={fontFamily.className}>
         <div className="flex flex-col min-h-screen antialiased transition-colors duration-500">
           <ApolloWrapper>
-            <header className="font-medium">
+            <header className="font-medium fixed w-full">
               <NavBar />
             </header>
 
-            <main className="flex-grow flex [&>*]:flex-1">{children}</main>
+            <main className="flex-grow flex [&>*]:flex-1 pt-16">{children}</main>
 
             <footer className="">
               <div className="text-center max-w-7xl mx-auto px-4 py-5 text-sm dark:opacity-40">
