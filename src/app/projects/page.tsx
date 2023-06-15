@@ -5,13 +5,10 @@ import { Project } from "@/types";
 import { useQuery } from "@apollo/client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useProjectImage } from "@/hooks";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function ProjectPage() {
   const { data, loading } = useQuery<{ projects: Project[] }>(GET_ALL_PROJECT_SUMMARIES);
-  const { setProjectImage } = useProjectImage();
-  const router = useRouter();
 
   if (loading) {
     return null;
@@ -21,13 +18,10 @@ function ProjectPage() {
     <div className="flex flex-col items-center justify-evenly">
       <div className="flex flex-wrap max-w-7xl mx-auto items-center justify-center gap-4 p-4">
         {data?.projects.slice(0, 6).map((_p, i) => (
-          <button
+          <Link
             key={i}
+            href={`/projects/${_p.slug}`}
             className="p-2 bg-rose-900 transition-all duration-300 hover:scale-110 rounded-lg w-96 flex flex-col gap-3"
-            onClick={() => {
-              setProjectImage(_p.desktopScreenshot?.url || "");
-              router.push(`/projects/${_p.slug}`);
-            }}
           >
             <motion.div
               layoutId={_p.slug}
@@ -63,7 +57,7 @@ function ProjectPage() {
               </ul>
               {_p.isWIP && <span>⚒️</span>}
             </div>
-          </button>
+          </Link>
         ))}
       </div>
       <span>Page indicators coming soon</span>
