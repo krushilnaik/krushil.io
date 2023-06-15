@@ -1,9 +1,10 @@
+import Link from "next/link";
+
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-
 import { config } from "@fortawesome/fontawesome-svg-core";
-import Link from "next/link";
+
 config.autoAddCss = false;
 
 export default function Home() {
@@ -20,15 +21,16 @@ export default function Home() {
         <section className="text-lg flex flex-wrap gap-10 p-8 items-center">
           <div className="flex flex-col gap-10">
             <div>
-              <h1 className="text-xl">Hey, I&apos;m Krushil.</h1>
+              <h1 className="italic">Hey! I&apos;m Krushil.</h1>
               <p className="text-4xl mt-2 font-bold lg:text-5xl">
-                Your next software engineer.
+                Your next{" "}
+                <span className="text-transparent dark:text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-rose-600">
+                  software engineer
+                </span>
+                .
               </p>
             </div>
             <div className="flex gap-7">
-              {/* <button className="bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 px-4 py-2 rounded-lg">
-                Get in touch
-              </button> */}
               <button
                 aria-label="Get in touch"
                 className="relative px-5 py-2 font-medium text-white group"
