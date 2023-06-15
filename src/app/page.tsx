@@ -33,7 +33,7 @@ export default function Home() {
             <div className="flex gap-7">
               <button
                 aria-label="Get in touch"
-                className="relative px-5 py-2 font-medium text-white group"
+                className="relative dark px-5 py-2 font-medium text-white group"
               >
                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-hover:-skew-x-12"></span>
