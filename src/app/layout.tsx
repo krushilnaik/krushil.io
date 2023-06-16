@@ -18,7 +18,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={(scheme as string) ?? "dark"}>
       <body className={fontFamily.className}>
-        <div className="grid grid-rows-[auto_auto_auto] grid-cols-1 [&>*]:col-span-full min-h-screen">
+        <div className="grid grid-rows-[auto_1fr_auto] grid-cols-1 [&>*]:col-span-full min-h-screen">
           <ApolloWrapper>
             <header className="relative z-10 font-medium w-full row-[1_/_2]">
               <NavBar />
