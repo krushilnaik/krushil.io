@@ -32,7 +32,7 @@ function ProjectPage({ params }: Props) {
       <div aria-label="project demo" className="flex flex-col items-center">
         <motion.div
           layoutId={params.slug}
-          className="relative aspect-video grid place-content-center border-rose-900 bg-rose-600 text-xl rounded-md border-8 w-[683px] max-w-[85vw]"
+          className="relative aspect-video grid place-content-center border-rose-900 bg-rose-600 text-xl rounded-md border-8 w-[600px] max-w-[85vw]"
         >
           {loading && (
             <div className="absolute w-full h-full grid place-content-center gap-3 bg-rose-950">

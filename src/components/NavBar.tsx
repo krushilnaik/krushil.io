@@ -3,18 +3,22 @@
 import Link from "next/link";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import Breadcrumbs from "./Breadcrumbs";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center text-lg md:text-xl">
-      <Link
-        href={"/"}
-        className="rounded-full bg-rose-800 h-9 aspect-square grid place-content-center"
-      >
-        k
-      </Link>
+      <div className="flex gap-1 items-center">
+        <Link
+          href={"/"}
+          className="rounded-full bg-rose-800 hover:bg-rose-700 transition-colors duration-300 h-7 aspect-square grid place-content-center text-base"
+        >
+          k
+        </Link>
+        <Breadcrumbs />
+      </div>
 
       <div
         aria-hidden

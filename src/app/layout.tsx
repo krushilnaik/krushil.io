@@ -24,7 +24,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <NavBar />
             </header>
 
-            <main className="flex [&>*]:flex-1 pt-16 row-span-full">{children}</main>
+            <main className="flex [&>*]:flex-1 pt-16 row-span-full max-w-7xl mx-auto">
+              {children}
+            </main>
 
             <footer className="relative z-10 row-[-2_/_-1]">
               <div className="text-center py-7 text-sm dark:opacity-40">
