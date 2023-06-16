@@ -64,7 +64,18 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <section className="h-screen flex justify-center items-center gap-96">
+      <section className="relative h-screen flex justify-center items-center gap-96 dark:bg-[#161e30]">
+        {/* dark:bg-[#1c263b] */}
+        <svg
+          className="absolute bottom-full h-60 w-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 285"
+        >
+          <path
+            className="dark:fill-[#161e30]"
+            d="M0,256L120,266.7C240,277,480,299,720,261.3C960,224,1200,128,1320,80L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+          ></path>
+        </svg>
         You can find me... {alliterations[0]}
       </section>
     </div>
